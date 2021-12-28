@@ -39,6 +39,6 @@ func main() {
 		}
 	}
 
-	http.HandleFunc("/api/user", handler)
+	http.HandleFunc("/user", handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
