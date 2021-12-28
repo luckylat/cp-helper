@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 type User struct {
@@ -38,7 +39,14 @@ func main() {
 			return
 		}
 	}
+	var port string
+
+	if os.Getenv("PORT") == "" {
+		port = "8080"
+	} else {
+		port = os.Getenv("PORT")
+	}
 
 	http.HandleFunc("/user", handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
