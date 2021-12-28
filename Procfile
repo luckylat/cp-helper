@@ -1,0 +1,1 @@
+web: go build ./api/main.go
