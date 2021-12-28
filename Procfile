@@ -1,1 +1,1 @@
-web: bin/api/main.go
+web: bin/api
